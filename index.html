@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="description" content="Novruzzade Tunar, Tunar, Tunar Novruzzade">
+    <meta property="og:title" content="Hii, I am Tunar">
+    <meta property="og:description" content="I am from Azerbaijan, I am 16, I am startup founder">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://novruzzade.github.io/">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- Style File -->
+    <link rel="stylesheet" href="style.css">
+    <title>Hii, am Tunar </title>
+</head>
+
+<body>
+
+<div class="fixed-load">
+   <div class="text-content">
+     <span class="auto-type"></span>
+   </div> 
+    <div class="part-1" id="part1"></div>
+</div>
+
+ <div class="social-box">
+    <div class="box" ><a target="_blank" href="https://github.com/projectnovruzzade"><i class="fa-brands fa-github"></i></a></div>
+    <div class="box" ><a target="_blank" href="https://www.linkedin.com/in/tunar-novruzzade-216193269/"><i class="fa-brands fa-linkedin"></i></a></div>
+    <div class="box"><a href="https://www.facebook.com/tunar.novruzzade.35/"  target="_blank"><i class="fa-brands fa-facebook"></i></a></div>
+ </div>
+    <section>
+        <div class="container-center">
+            <div class="middle-box" id="middleBox" onmouseover="IsActive()" onmouseout="nonActive()">
+                <div class="text-box front">
+                    <div class="img-box">
+                        <img src="img/my-logo.png" alt="">
+                    </div>
+                    Novruzzade Tunar
+                </div>
+                <div class="text-box back">
+                    <div style="text-align: left;">
+                        {   
+                            <br>
+                            &nbsp;name: <span class="edit">Tunar,</span><br>
+                            &nbsp;surname: <span class="edit">Novruzzade,</span><br>
+                            &nbsp;age: <span class="edit">16,</span><br>
+                            &nbsp;live: <span class="edit">Mingachevir,</span><br>
+                            &nbsp;activities: <span class="edit">[coding,gaming,sleeping]</span><br>
+                         }               
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Jquery -->
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            let typed = new Typed(".auto-type", {
+                strings: ["Hello,I am Tunar"],
+                typeSpeed: 120,
+                backSpeed: 120,
+                showCursor: true,
+                cursorChar: '|',
+                autoInsertCss: true,
+                loop: false
+            });
+            let part1 = document.getElementById("part1");
+            let counter = 100;
+            let timeOut = setTimeout(() => {
+                let check = setInterval(() => {
+                    part1.style.width = counter + "%";
+                    counter -= 2;
+                    if (counter == -1) {
+                        clearInterval(check);
+                    }
+                }, 20);
+                document.querySelector(".auto-type").style.opacity = "0";
+            }, 4100);
+            setTimeout(() => {
+                document.querySelector(".fixed-load").style.display = "none";
+                document.querySelector(".typed-cursor").style.display = "none";
+                part1.style.display = "none";
+            }, 5140);
+        }
+        let mdbx = document.getElementById("middleBox")
+        function IsActive() {
+            mdbx.classList.add("active");
+            console.log("active")
+        }
+
+        function nonActive() {
+            mdbx.classList.remove("active");
+            console.log("NonActive")
+        }
+    </script>
+</body>
+
+</html>
